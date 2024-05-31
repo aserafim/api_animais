@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>App Animal</title>
 </head>
@@ -15,8 +14,8 @@
         <ul style="list-style: none;">
         <li><label>Nome: <input type="text" id="nome" placeholder="Nome do animal"></label><br></li><br>
         <li><label>Idade: <input type="number" id="idade"></label></li><br>
-        <li><label>Sexo: <input type="text" placeholder="Sexo"></label></li><br>
-        <li><label>Cor: <input type="text" placeholder="Cor"></label></li>
+        <li><label>Sexo: <input id="sexo" type="text" placeholder="Sexo"></label></li><br>
+        <li><label>Cor: <input id="cor" placeholder="Cor"></label></li>
         </ul>
         <input type="submit" value="Salvar">
     </form>
@@ -24,6 +23,6 @@
     <h2>Animais Cadastrados</h2>
     <ul id="lista-animais">
     </ul>
-
+    <script src="script.js"></script>
 </body>
 </html>
