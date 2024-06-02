@@ -1,28 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>App Animal</title>
-</head>
-<body>
-    <h1>Aplicativo para cadastro de animais.</h1>
-    <h2>Novo animal</h2>
-    <form id="form-animal">
-        <ul style="list-style: none;">
-        <li><label>Nome: <input type="text" id="nome" placeholder="Nome do animal"></label><br></li><br>
-        <li><label>Idade: <input type="number" id="idade"></label></li><br>
-        <li><label>Sexo: <input id="sexo" type="text" placeholder="Sexo"></label></li><br>
-        <li><label>Cor: <input id="cor" placeholder="Cor"></label></li>
-        </ul>
-        <input type="submit" value="Salvar">
-    </form>
 
-    <h2>Animais Cadastrados</h2>
-    <ul id="lista-animais">
-    </ul>
-    <script src="script.js"></script>
+ <head>
+	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="Loop Nerd" content="Create one that collects user data and sends it to another page." />
+    <meta name="description" content="This tutorial shows you how to create a simple HTML form using CSS3. The form will collect information from users and send them to a new web page."/>
+    <meta name="keywords" content="Html, Css, Jquery, Wordpress, Free Sites, Wordpress Theme, Responsive Site"/>
+    <meta name="author" content="Loop Nerd" />
+    <meta name="URL" content="https://www.loopnerd.com.br/artigos/css3/formulario-de-cadastro-html-css-pronto"/>
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="robots" content="index, follow"/>
+    
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->       
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts-icones.css">
+    <link rel="shortcut icon" href="https://www.loopnerd.com.br/wp-content/themes/loopnerd/img/favicon.png"/>
+
+	<title>Agendamento Pet Care</title>
+ 
+ </head>
+
+<body>
+    
+<header class="main_header container">        
+    <div class="content">
+
+        <div class="main_header_logo">
+            <img src="img/logo_2.png" alt="logo_2.png" title="Pet Care"/>
+        </div>
+    
+    </div>
+</header>
+
+<main class="main_content container">
+
+        
+    <section class="section-seu-codigo container">
+        
+        <div class="content">
+                        
+            <div class="box-artigo">
+                
+               
+                <!--Inícia Formulário-->
+
+                    <div class="container_form">
+            
+                            <h1>Agendamento Pet Care</h1>
+
+                            <form class="form" action="#" id="formulario-cadastro">
+                                
+                                <div class="form_grupo">
+                                    <label for="nome_pai_mae" class="form_label">Nome do pai/mãe</label>
+                                    <input type="text" name="nome_pai_mae" class="form_input" id="nome_pai_mae" placeholder="Nome">
+                                </div>
+
+                                <div class="form_grupo">
+                                    <label for="e-mail" class="form_label">Email</label>
+                                    <input type="email" name="email" class="form_input" id="email" placeholder="seuemail@email.com">
+                                </div>
+
+                                <div class="form_grupo">
+                                    <label for="tel" class="form_label">Tel/Whatsapp</label>
+                                    <input type="text" name="tel" class="form_input" id="tel" placeholder="(XX) 9XXXX-XXXX" >
+                                </div>
+
+                                <div class="form_grupo">
+                                    <label for="nome_pet" class="form_label">Nome do pet</label>
+                                    <input type="text" name="nome_pet" class="form_input" id="nome_pet" placeholder="Nome do pet" >
+                                </div>
+
+                                <div class="form_grupo">
+                                    <label for="data" class="form_label">Data</label>
+                                    <input type="date" name="data" class="form_input" id="data" placeholder="Data" >
+                                </div>        
+
+                                <div class="form_grupo">
+                                    <label for="hora" class="form_label">Data</label>
+                                    <input type="time" min="09:00" max="17:30" step="1800" name="hora" class="form_input" id="hora" placeholder="Hora" >
+                                </div>
+
+                                <div class="form_grupo">
+                                    
+                                    <label for="pet" class="text">Pet</label>
+                                    <select name="pet" class="dropdown" >
+                                        
+                                        <option selected disabled class="form_select_option" value="">Selecione</option>
+                                        <option value="cao" class="form_select_option">Doguinho(a)</option>
+                                        <option value="gato" class="form_select_option">Gatinho(a) </option>
+                                        <option value="roedor" class="form_select_option">Roedor(a)</option>
+                                        <option value="ave" class="form_select_option">Ave</option>
+                                    
+                                    </select>
+
+                                </div>
+
+                                <div class="form_grupo">
+
+                                    <span class="legenda">Sexo:</span>
+                                    
+                                    <div class="radio-btn">
+                                        <input type="radio" class="form_new_input" id="macho" name="sexo" value="Macho">
+                                        <label for="macho" class="radio_label form_label"> <span class="radio_new_btn"></span> Macho</label>
+                                    </div>
+
+                                    <div class="radio-btn">
+                                        <input type="radio" class="form_new_input" id="femea" name="sexo" value="Fêmea">
+                                        <label for="femea" class="radio_label form_label"> <span class="radio_new_btn"></span> Fêmea</label>
+                                    </div>
+
+                                </div>
+                              
+
+                                <div class="form_grupo">
+
+                                    <span class="legenda">Procedimento</span>
+
+                                    <div class="check-btn">
+                                        <input type="checkbox" class="form_new_input" id="banho" name="procedimento" value="html5">
+                                        <label for="html5" class="form_label check_label"> <span class="check_new_btn"></span> Banho - R$30,00</label>
+                                    </div>
+
+                                    <div class="check-btn">
+                                        <input type="checkbox" class="form_new_input" id="tosa" name="procedimento" value="tosa">
+                                        <label for="tosa" class="form_label check_label"><span class="check_new_btn"></span> Tosa - R$30,00</label>
+                                    </div>
+
+                                    <div class="check-btn">
+                                        <input type="checkbox" class="form_new_input" id="bucal" name="procedimento" value="bucal">
+                                        <label for="bucal" class="form_label check_label"><span class="check_new_btn"></span> Higiene Bucal - R$15,00</label>
+                                    </div>
+
+                                    <div class="check-btn">
+                                        <input type="checkbox" class="form_new_input" id="vacina" name="procedimento" value="vacina">
+                                        <label for="vacina" class="form_label check_label"><span class="check_new_btn"></span> Vacina - R$70,00</label>
+                                    </div>
+
+                                    <div class="form_message">
+                                        
+                                        <label for="message" class="form_message_label"> Detalhes adicionais:</label>
+                                        <textarea name="mensagem" id="message" cols="30" rows="3" class="form_input message_input" placeholder="Ex: Alérgico a perfume."></textarea>
+
+                                    </div>
+
+                                    <div class="submit">
+
+                                      <input type="hidden" name="acao" value="enviar">
+                                      <button type="submit" name="Submit" class="submit_btn" >Marcar Consulta</button>
+                                      
+                                      <input type="hidden" name="acao" value="reset">
+                                      <button type="reset" name="Reset" class="cancel_btn" >Cancelar</button>
+
+                                    </div>
+
+                                    <div class="agenda">
+                                        <!--<input type="hidden" name="acao" value="agenda">-->
+                                        <a href='agenda.html' class="agendas_btn" >Consultar Agenda</a>
+                                    </div>
+                            </form>
+
+                    </div><!--container_form-->
+
+                <!--Finaliza Formulário-->
+
+
+            </div><!--Box Artigo-->
+
+
+        <div class="clear"></div>
+        </div>
+    </section><!--FECHA BOX HTML-->
+
+
+</main>
+
+<footer class="main_footer container">
+    <div class="main_footer_copy">
+
+        <p class="m-b-footer"> Pet Care - 2024, todos os direitos reservados.</p>
+    
+    </div>
+</footer>
+
+<script src="js/jquery.js"></script>
+<script src="js/script.js"></script>
+                    
 </body>
 </html>

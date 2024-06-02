@@ -18,14 +18,21 @@ app.add_middleware(
     allow_headers = ["*"]
 )
 
-class Animal(BaseModel):
+class Consulta(BaseModel):
     id : Optional [str]
-    nome : str
-    idade : int
-    sexo : str
-    cor : str
+    nome : Optional [str]
+    email : Optional [str]
+    tel : Optional [str]
+    nome_pet : Optional [str]
+    data : Optional [str]
+    hora : Optional [str]
+    pet : Optional [str]
+#   idade : int
+    sexo : Optional [str]
+    procedimento : Optional [str]
+    add_ons : Optional [str]
 
-banco : List[Animal] = []
+banco : List[Consulta] = []
 
 
 @app.get('/')
@@ -45,7 +52,7 @@ def animal(id:str):
     return {"mensagem" : "Não localizado"}
 
 @app.post('/animais')
-def inserir_animal(animal : Animal):
+def inserir_animal(animal : Consulta):
     animal.id = str(uuid4())
     banco.append(animal)
     return{'messagem' : 'Animal cadastrado com sucesso'}

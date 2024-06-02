@@ -3,6 +3,8 @@ async function carregarAnimais(){
     const animais = response.data
     const lista = document.getElementById("lista-animais")
 
+    lista.innerHTML = ''
+
     animais.forEach(animal => {
         const item = document.createElement('li')
         item.innerText = animal.nome
@@ -18,17 +20,13 @@ function manipularFormulario(){
     const input_sexo = document.getElementById('sexo')
     const input_cor = document.getElementById('cor')
 
-    form_animal.onsubmit = () =>{
+    form_animal.onsubmit = async () =>{
         event.preventDefault()
         const nome_animal = input_nome.value
         const idade_animal = input_idade.value
         const sexo_animal = input_sexo.value
         const cor_animal = input_cor.value
         
-        //alert(`Valores inputados ${nome_animal}, ${idade_animal}, ${sexo_animal}, ${cor_animal}`)
-
-
-
         axios.post('http://localhost:8080/animais',{
             id : null,
             nome: nome_animal,
@@ -36,6 +34,8 @@ function manipularFormulario(){
             sexo: sexo_animal,
             cor: cor_animal
         })
+
+        carregarAnimais()
 
     }
 
