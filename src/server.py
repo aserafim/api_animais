@@ -40,27 +40,27 @@ def home():
     return {'message' : 'Seja bem vindo.'}
 
 
-@app.get('/animais')
-def listar_animais():
+@app.get('/consultas')
+def listar_consultas():
     return banco
 
-@app.get('/animais/{id}')
-def animal(id:str):
-    for animal in banco:
-        if animal.id == id:
-            return animal
-    return {"mensagem" : "Não localizado"}
+@app.get('/consulta/{id}')
+def consulta_id(id:str):
+    for consulta in banco:
+        if consulta.id == id:
+            return consulta
+    return {"mensagem" : "Consulta não localizada"}
 
-@app.post('/animais')
-def inserir_animal(animal : Consulta):
-    animal.id = str(uuid4())
-    banco.append(animal)
-    return{'messagem' : 'Animal cadastrado com sucesso'}
+@app.post('/consultas')
+def marcar_consulta(consulta : Consulta):
+    consulta.id = str(uuid4())
+    banco.append(consulta)
+    return{'messagem' : 'Consulta agendada com sucesso'}
 
-@app.delete('/animais/{id}')
-def remove_animal(id:str):
-    for animal in banco:
-        if animal.id == id:
-            banco.remove(animal)
+@app.delete('/consulta/{id}')
+def cancelar_consulta(id:str):
+    for consulta in banco:
+        if consulta.id == id:
+            banco.remove(consulta)
 
-    return {"mensagem" : "Animal removido com sucesso"}
+    return {"mensagem" : "Consulta cancelada com sucesso"}

@@ -83,14 +83,14 @@
                                 </div>        
 
                                 <div class="form_grupo">
-                                    <label for="hora" class="form_label">Data</label>
+                                    <label for="hora" class="form_label">Hora (a cada 30min)</label>
                                     <input type="time" min="09:00" max="17:30" step="1800" name="hora" class="form_input" id="hora" placeholder="Hora" >
                                 </div>
 
                                 <div class="form_grupo">
                                     
                                     <label for="pet" class="text">Pet</label>
-                                    <select name="pet" class="dropdown" >
+                                    <select name="pet" class="dropdown" id="pet" >
                                         
                                         <option selected disabled class="form_select_option" value="">Selecione</option>
                                         <option value="cao" class="form_select_option">Doguinho(a)</option>
@@ -124,9 +124,10 @@
                                     <span class="legenda">Procedimento</span>
 
                                     <div class="check-btn">
-                                        <input type="checkbox" class="form_new_input" id="banho" name="procedimento" value="html5">
-                                        <label for="html5" class="form_label check_label"> <span class="check_new_btn"></span> Banho - R$30,00</label>
+                                        <input type="checkbox" class="form_new_input" id="banho" name="procedimento" value="banho">
+                                        <label for="banho" class="form_label check_label"><span class="check_new_btn"></span> Banho - R$30,00</label>
                                     </div>
+
 
                                     <div class="check-btn">
                                         <input type="checkbox" class="form_new_input" id="tosa" name="procedimento" value="tosa">
